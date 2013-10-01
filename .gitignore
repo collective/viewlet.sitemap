@@ -1,0 +1,14 @@
+*.mo
+*.egg-info/
+*.pyc
+*~
+*.swp
+bin/
+develop-eggs/
+eggs/
+include/
+lib/
+parts/
+var/
+.installed.cfg
+local/

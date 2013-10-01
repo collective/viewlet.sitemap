@@ -1,0 +1,6 @@
+<tal:available condition="view/available">
+<ul id="portal-sitemap"
+	class="navTreeLevel0 visualNoMarker">
+	<tal:sitemap replace="structure view/createSiteMap" />
+</ul>
+</tal:available>

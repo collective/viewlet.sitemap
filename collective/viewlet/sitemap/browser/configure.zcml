@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plone">
+
+    <browser:viewlet
+      name="collective.viewlet.sitemap"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.SitemapViewlet"
+      layer=".interfaces.IAddOnInstalled"
+      permission="zope2.View"
+      />
+
+</configure>

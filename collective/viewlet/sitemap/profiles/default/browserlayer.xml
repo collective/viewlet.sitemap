@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+    <layer
+        name="collective.viewlet.sitemap"
+         interface="collective.viewlet.sitemap.browser.interfaces.IAddOnInstalled"
+         />
+</layers>
