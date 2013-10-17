@@ -23,12 +23,12 @@ class SitemapViewlet(ViewletBase):
     def _renderLevel(self, children=[], level=2):
         output = ''
         for node in children:
-            output += '<li class="navTreeItem visualNoMarker">\n'
+            output += '<li class="level1">\n'
             output += self.item_template(node=node)
             children = node.get('children', [])
             if len(children):
                 output += \
-                    '<ul class="navTree navTreeLevel%d">\n%s\n</ul>\n' % (
+                    '<ul class="dropdown-menu level%d">\n%s\n</ul>\n' % (
                         level, self._renderLevel(children, level+1))
             output += '</li>\n'
         return output
