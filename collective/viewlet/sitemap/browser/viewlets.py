@@ -23,13 +23,20 @@ class SitemapViewlet(ViewletBase):
     def _renderLevel(self, children=[], level=2):
         output = ''
         for node in children:
-            output += '<li class="level1">\n'
-            output += self.item_template(node=node)
-            children = node.get('children', [])
-            if len(children):
+            grandchildren = node.get('children', [])
+            if len(grandchildren):
+                node['dropdown'] = True
+                output += '<li class="dropdown">\n'
+            else:
+                node['dropdown'] = False
+                output += '<li class="">\n'
+            output += self.item_template(node=node) 
+            
+            if len(grandchildren):
                 output += \
                     '<ul class="dropdown-menu level%d">\n%s\n</ul>\n' % (
-                        level, self._renderLevel(children, level+1))
+                        level, self._renderLevel(grandchildren, level+1))
+                
             output += '</li>\n'
         return output
 
